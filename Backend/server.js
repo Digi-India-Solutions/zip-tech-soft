@@ -14,12 +14,12 @@ app.use((req,res,next)=>{
 const corsOptions = {
   origin: [
     // "http://localhost:3000",
-    "http://localhost:3002",
-    "https://challan-frontend.vercel.app",
+    "http://localhost:3000",
     "http://localhost:3001",
-    "https://ircc-portal.com",
-    "http://www.ircc-portal.com",
-    "http://admin.ircc-portal.com"
+    "https://ziptech.site",
+    "http://www.ziptech.site",
+    "http://admin.ziptech.site",
+    "http://api.ziptech.site"
   ],
 };
 
