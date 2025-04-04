@@ -19,7 +19,7 @@ const corsOptions = {
     "https://ziptech.site",
     "http://www.ziptech.site",
     "http://admin.ziptech.site",
-    "http://api.ziptech.site"
+    
   ],
 };
 
