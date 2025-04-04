@@ -11,18 +11,18 @@ app.use((req,res,next)=>{
   console.log(req.headers.origin);
   next()
 })
-const corsOptions = {
-  origin: [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "https://ziptech.site",
-    "https://www.ziptech.site",
-    "http://ziptech.site",
-    "https://api.ziptech.site",
-  ],
-};
+// const corsOptions = {
+//   origin: [
+//     "http://localhost:3000",
+//     "http://localhost:3001",
+//     "https://ziptech.site",
+//     "https://www.ziptech.site",
+//     "http://ziptech.site",
+//     "https://api.ziptech.site",
+//   ],
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.options("*", cors());
 app.use(morgan("dev"));
 app.use(express.json());
