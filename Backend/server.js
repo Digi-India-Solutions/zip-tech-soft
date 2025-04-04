@@ -16,12 +16,13 @@ const corsOptions = {
     "http://localhost:3000",
     "http://localhost:3001",
     "https://ziptech.site",
-    "http://www.ziptech.site",
-    "http://api.ziptech.site",
+    "https://www.ziptech.site",
+    "http://ziptech.site",
+    "https://api.ziptech.site",
   ],
 };
 
-app.use(cors({}));
+app.use(cors(corsOptions));
 app.options("*", cors());
 app.use(morgan("dev"));
 app.use(express.json());
