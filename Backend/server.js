@@ -7,23 +7,9 @@ dotenv.config();
 
 const app = express();
 
-app.use((req,res,next)=>{
-  console.log(req.headers.origin);
-  next()
-})
-// const corsOptions = {
-//   origin: [
-//     "http://localhost:3000",
-//     "http://localhost:3001",
-//     "https://ziptech.site",
-//     "https://www.ziptech.site",
-//     "http://ziptech.site",
-//     "https://api.ziptech.site",
-//   ],
-// };
+
 
 app.use(cors());
-app.options("*", cors());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -46,4 +32,3 @@ app.get("/", (req, res) => {
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
-
