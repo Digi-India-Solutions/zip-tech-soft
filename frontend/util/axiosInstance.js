@@ -2,7 +2,7 @@ import axios from "axios";
 
 const axiosInstance = axios.create({
   // baseURL: "https://api.ircc-portal.com",
-  baseURL: "http://api.ziptech.site",
+  baseURL: "https://api.ziptech.site",
   headers: {
     "Content-Type": "application/json",
   },
