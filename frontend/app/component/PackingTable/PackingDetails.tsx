@@ -64,7 +64,8 @@ const PackingDetails: React.FC = () => {
   const [gst, setGst] = useState<number>(0);
   const [tcsFare, setTcsFare] = useState<number | string>("");
   const [totalWeight, setTotalWeight] = useState("");
-  const [totalBags, setTotalBags] = useState("");
+   const [totalBags, setTotalBags] = useState<string | number>("");
+
   const [disabled, setDisabled] = useState(false);
 
   const [clients, setClients] = useState<Clients[]>([]);
@@ -385,8 +386,8 @@ console.log("transformedData", transformedData);
     setGst(value);
   }
   const handleTotalBagsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.target.value);
-    setGst(value);
+  const value = Number(e.target.value);
+    setTotalBags(value);
   }
   const handleldkjfl = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(e.target.value);
