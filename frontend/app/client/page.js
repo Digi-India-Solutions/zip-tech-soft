@@ -394,7 +394,8 @@ function Client() {
         // Optional: Auto-download
         const link = document.createElement("a");
         link.href = fileURL;
-        link.download = "invoice.pdf";
+        link.download = `invoice_${challanVal.name.name}_${challanVal.challanNumber}.pdf`;
+
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
