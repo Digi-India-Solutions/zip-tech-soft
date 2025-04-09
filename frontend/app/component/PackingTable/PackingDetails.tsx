@@ -10,6 +10,24 @@ import axiosInstance from "../../../util/axiosInstance";
 import { useRouter } from "next/navigation";
 import { toast as notify } from "react-hot-toast";
 
+const clearOriginalTable = () => {
+  initialTableDetails.forEach((row) => {
+    for (const key in row) {
+      if (key !== "sNo" && typeof row[key] === "string") {
+        row[key] = "";
+      }
+    }
+  });
+};
+const clearOriginalProduct = () => {
+  initialProducts.forEach((row) => {
+    for (const key in row) {
+      if (typeof row[key] === "string") {
+        row[key] = "";
+      }
+    }
+  });
+};
 
 type Clients = {
   _id: string;
@@ -292,7 +310,6 @@ const PackingDetails: React.FC = () => {
       invoiceNumber: parseInt(newChallan.invoiceNo),
       company: clientName,
     };  
-console.log("transformedData", transformedData);
 
     try {
       setDisabled(true);
@@ -304,6 +321,8 @@ console.log("transformedData", transformedData);
       if (response.status === 201) {
         // toast.remove(loading);
         notify.success("Challan saved successfully!");
+        clearOriginalTable()
+        clearOriginalProduct()
         setDisabled(false);
         router.push("/");
       }

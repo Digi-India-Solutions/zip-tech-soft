@@ -183,6 +183,8 @@ export const initialTableDetails = [
   },
 ];
 
+
+
 export const initialProducts = [
   { name: "", price: "" },
   { name: "", price: "" },
