@@ -31,8 +31,11 @@ function Client() {
   }, []);
 
   const handleToChat = (phone) => {
-    const whatsappUrl = `https://wa.me/${phone}`;
-    router.push(whatsappUrl);
+    if(typeof window !== "undefined"){
+      const whatsappUrl = `https://wa.me/${phone}`;
+      window.open(whatsappUrl, "_blank");
+    }
+  
   };
 
   const handleDelete = async (id) => {
@@ -394,7 +397,7 @@ function Client() {
         // Optional: Auto-download
         const link = document.createElement("a");
         link.href = fileURL;
-        link.download = `invoice_${challanVal.name.name}_${challanVal.challanNumber}.pdf`;
+        link.download = `${challanVal.challanNumber}-${challanVal.name.name}.pdf`;
 
         document.body.appendChild(link);
         link.click();

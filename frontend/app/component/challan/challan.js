@@ -356,7 +356,7 @@ function ViewChallan() {
         // Optional: Auto-download
         const link = document.createElement("a");
         link.href = fileURL;
-        link.download = `invoice_${challan.name.name}_${challan.challanNumber}.pdf`;
+        link.download = `${challan.challanNumber}-${challan.name.name}.pdf`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -374,8 +374,11 @@ function ViewChallan() {
     router.push(`/challan/add-challan/${index}`);
   };
   const handleToChat = (phone) => {
-    const whatsappUrl = `https://wa.me/${phone}`;
-    router.push(whatsappUrl);
+    if(typeof window !== "undefined"){
+      const whatsappUrl = `https://wa.me/${phone}`;
+      window.open(whatsappUrl, "_blank");
+    }
+   
   };
   useEffect(() => {
     fetchChallan();
