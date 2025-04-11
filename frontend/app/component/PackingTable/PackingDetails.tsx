@@ -385,9 +385,9 @@ const PackingDetails: React.FC = () => {
   const fetchChallanCount=async()=>{
     try {
       const response = await axiosInstance.get("/api/v1/challan/challan-count");
-      console.log("response", response.data);
-      
-      setChallanNo(response.data.count);
+  const totalCount=Number(response?.data?.count) + 400;
+  const value=totalCount.toString();
+      setChallanNo(value);
     } catch (error) {
       if (error.response) {
         notify.error(error.response.data.message);
